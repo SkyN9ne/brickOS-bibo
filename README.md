@@ -1,9 +1,6 @@
 ====================
- bibo isn't brickOS
+#  bibo isn't brickOS
 ====================
-
-From the BrickBot/brickOS-bibo repository on GitHub
----------------------------------------------------
 
 Bibo is an alternative Lego MindStorms RCX operating system and firmware that
 is a brickOS clone.  The kernel was written from scratch to give better
@@ -49,27 +46,28 @@ The inclusion of the enhanced ir-server is expected to supercede lnpd.
 As an alternative to ir-server, there is also lnphost, which was itself design to replace lnpd.
 
 
-HISTORY
+# HISTORY #
 -------
 The brickOS project itself was originally named legOS.  Early information
 and documentation about the project are available
 [here](https://arcb.csc.ncsu.edu/~mueller/rt/mindstorm/www.multimania.com/legos/).
 The project then moved to SourceForge as legOS
-([homepage](http://legos.sf.net/) / [project site](http://sf.net/projects/legos))
+([homepage](https://legos.sf.net/) / [project site](https://sf.net/projects/legos))
 before taking up residence in a new SourceForge site as brickOS
-([homepage](http://brickos.sf.net/) / [project site](https://sf.net/projects/brickos/)).
+([homepage](https://brickos.sf.net/) / [project site](https://sf.net/projects/brickos/)).
 
 
-ENVIRONMENT CONFIGURATION
+# ENVIRONMENT CONFIGURATION
 -------------------------
-A DJGPP setup for legOS on Windows—with downloads—was described at
-http://legos.sf.net/files/windows/djgpp/
 
-Slightly more recent setup instructions for Windows and Debian/Linux are
-available at http://brickos.sourceforge.net/documents.htm#INSTALLATION
+A DJGPP setup for legOS on Windows with downloads was described at
+https://legos.sf.net/files/windows/djgpp/
+
+Slightly more recent setup instructions for Windows and Debian / GNU Linux are
+available at https://brickos.sourceforge.net/documents.htm#INSTALLATION
 
 Note that Windows users now also have the option of using the
-[Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/initialize-distro).
+[Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/initialize-distro)
 
 Regardless of platform, key toolchain components include the following:
 * binutils-h8300-hms
@@ -82,10 +80,10 @@ Regardless of platform, key toolchain components include the following:
 * g++
 
 
-SETUP
+# SETUP
 -----
 
-This software will run on Linux and Windows (using the Cygwin tool suite.)
+This software will run on Linux and Windows (using Cygwin, MSYS2, WSL, MinGW etc tool suites with a Bash shell environment)
 
 To start with brickOS:
 
@@ -108,7 +106,7 @@ To start with brickOS:
 
 If things don't quite work, work at it.  :-)
 
-For your own projects,
+# For your own projects,
 
 - Make a directory in the brickOS root directory.
 - Copy /usr/local/brickos/lib/bibo/Makefile.
@@ -116,18 +114,9 @@ For your own projects,
 - If you need more source files, add them in the Makefile.
 - "make myproject.lx && dll myproject.lx".
 
-In case anyone is wondering, dll is short for dynamic linker and loader.
-
-
-------------------------------------------------------------------------
-bibo Copyright (C) 2007 by Jochen Hoenicke
-legOS/brickOS Copyright (C) 1998-2005 by Markus L. Noga
-
-Major bibo updates integrated by Matthew Sheets
-
 =================================================================
 
-USB support on Linux for bibo / brickOS
+## USB support on Linux for bibo / brickOS ##
 ---------------------------------------
 
 USB support for IR Towers is now working for Linux and 
@@ -143,14 +132,14 @@ automatically be connected.
 
 I have usbutils installed which provides 'lsusb'. In my case
 lsusb shows the following when I have the IR Tower connected:
-
+   ´´´
    $ lsusb
    Bus 004 Device 001: ID 0000:0000
    Bus 003 Device 001: ID 0000:0000
    Bus 002 Device 001: ID 0000:0000
    Bus 001 Device 002: ID 0694:0001 Lego Group Mindstorms Tower
    Bus 001 Device 001: ID 0000:0000
-
+´´´
 I had to create my device file with something like:
 
 	sudo mknod /dev/usb/legotower0 c 180 160
@@ -180,9 +169,4 @@ And then I use firmdl3 and dll just as before.
 
 	  Now press [Run] to play the song...
 
-I hope this works for you. Please report issues with the USB support
-per the instructions found at http://brickos.sourceforge.net/rptrvwbugs.htm
-
-
-------------------------------------------------------------------------
-Stephen M Moraco (stephen@debian.org) - Mon, 17 Jan 2005 20:18:52 -0700
+I hope this works for you. It's very outdated:  Mon, 17 Jan 2005 20:18:52 -0700
